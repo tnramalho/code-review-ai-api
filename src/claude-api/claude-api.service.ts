@@ -34,18 +34,15 @@ export class ClaudeApiService {
     return PROMPT_PROJECT_SUMMARY;
   }
 
-  async codeReview(
-    codeAsContext: string,
-    codeToReview: string,
-  ): Promise<string> {
+  async codeReview(content: string): Promise<string> {
     console.log('inside code review');
-    const context = await this.getContext(codeAsContext, codeToReview);
+    //const context = await this.getContext(codeAsContext, codeToReview);
 
-    const prompt = `${HUMAN_PROMPT}: ${context} ${AI_PROMPT}`;
-
+    const prompt = `${HUMAN_PROMPT} ... ${AI_PROMPT}`;
     console.log(`${prompt}`);
+    console.log(`${content}`);
     const response = await this.client.complete({
-      prompt: prompt,
+      prompt: content,
       stop_sequences: [HUMAN_PROMPT],
       max_tokens_to_sample: 10000,
       temperature: 0.3,

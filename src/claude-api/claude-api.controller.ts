@@ -6,10 +6,7 @@ export class ClaudeApiController {
   constructor(private readonly claudeApiService: ClaudeApiService) {}
 
   @Post('code-review')
-  async codeReview(
-    @Body('codeAsContext') codeAsContext: string,
-    @Body('codeToReview') codeToReview: string
-  ) {
-    return await this.claudeApiService.codeReview(codeAsContext, codeToReview);
+  async codeReview(@Body('content') content: string) {
+    return await this.claudeApiService.codeReview(content);
   }
 }
