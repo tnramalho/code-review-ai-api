@@ -7,8 +7,8 @@ export class ClaudeApiController {
 
   @Post('code-review')
   async codeReview(
-    @Body('content') codeAsContext: string,
-    @Body('codeToReview') codeToReview: string
+    @Body('codeAsContext') codeAsContext: string,
+    @Body('codeToReview') codeToReview: string,
   ) {
     return await this.claudeApiService.codeReview(codeAsContext, codeToReview);
   }
