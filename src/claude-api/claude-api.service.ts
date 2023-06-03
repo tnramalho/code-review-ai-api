@@ -1,4 +1,4 @@
-import { AI_PROMPT, Client, HUMAN_PROMPT } from '@anthropic-ai/sdk';
+import { AI_PROMPT, Client, CompletionResponse, HUMAN_PROMPT, SamplingParameters } from '@anthropic-ai/sdk';
 import { Injectable } from '@nestjs/common/decorators/core';
 
 
@@ -70,12 +70,16 @@ export class ClaudeApiService {
       stop_sequences: [HUMAN_PROMPT],
       max_tokens_to_sample: 10000,
       temperature: 0.3,
-      //model: 'claude-v1',
       model: 'claude-v1.3-100k',
     });
 
     console.log('response', response.completion);
 
     return response.completion;
+  }
+
+  async sendToAI(aiSettings: SamplingParameters): Promise<CompletionResponse> {
+    const response = await this.client.complete(aiSettings);
+    return response;
   }
 }
