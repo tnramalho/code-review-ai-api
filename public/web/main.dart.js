@@ -27332,7 +27332,7 @@ k=A.aOi()
 l.Ub$=k
 l.Uc$=new A.a1y(A.aF(t.Gf))
 k=t.N
-k=A.j(["content",a],k,k)
+k=A.j(["content",a,"model","claude-instant-v1.1-100k"],k,k)
 j=A.aS0()
 j.a="POST"
 s=7
@@ -87400,12 +87400,12 @@ if(p==null)s=null
 else{p=p.a.d
 p=p==null?null:p.a
 s=p}if(s==null)s="Candidate"
-p=new A.a2r(q,new A.a2q()).k(0)
-r=q.c
+r=new A.a2r(q,new A.a2q()).$0()
+p=q.c
 Date.now()
 Date.now()
-B.b.I(r.a,A.b([new A.h5(B.cD,!0,"Act as a helpful  code reviewer. You were provided the task to do a code review for Candidate that is applying for a senior developer position.\n        You will be provided a CONTEXT that will have each file path and its content.\n        I want you to provide detailed insights in order to properly run technical qualifications on a candidate.\n\n        You can call this candidate: "+s+".\n\n        CONTEXT:\n        "+p+"()\n        "),new A.h5(B.d7,!0,"Understood. I will use the context as the whole code base. I will critique but be insightful and helpful. What would like to know first?")],t.SU))
-r.aK()
+B.b.I(p.a,A.b([new A.h5(B.cD,!0,"Act as a helpful  code reviewer. You were provided the task to do a code review for Candidate that is applying for a senior developer position.\n        You will be provided a CONTEXT that will have each file path and its content.\n        I want you to provide detailed insights in order to properly run technical qualifications on a candidate.\n\n        You can call this candidate: "+s+".\n\n        CONTEXT:\n        "+r+"\n        "),new A.h5(B.d7,!0,"Understood. I will use the context as the whole code base. I will critique but be insightful and helpful. What would like to know first?")],t.SU))
+p.aK()
 Date.now()
 q.on(new A.h5(B.cD,!0,"Give a full overview of the code base. Including the stack being used."))},
 gajp(){var s=this.c.a,r=A.Y(s).i("bK<1>")

@@ -83,8 +83,18 @@ export class ClaudeApiService {
     return response.completion;
   }
 
-  async sendToAI(aiSettings: SamplingParameters): Promise<CompletionResponse> {
-    const response = await this.client.complete(aiSettings);
+  async sendToAI(aiSettings: SamplingParameters & { content?: string}): Promise<CompletionResponse> {
+    
+    const request = {
+      prompt: aiSettings.content,
+      stop_sequences: [HUMAN_PROMPT],
+      max_tokens_to_sample: aiSettings.max_tokens_to_sample ??  10000,
+      temperature: aiSettings.temperature ?? 0.3,
+      model: aiSettings.model ?? 'claude-v1.3-100k',
+    };
+    console.log('request >> ', request);
+    const response = await this.client.complete(request);
+    console.log(response)
     return response;
   }
 }

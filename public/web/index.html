@@ -35,7 +35,7 @@
 
     <script>
       // The value below is injected by flutter build, do not touch.
-      var serviceWorkerVersion = "1623657640";
+      var serviceWorkerVersion = "4174382461";
     </script>
     <!-- This script adds the flutter initialization JS code -->
     <script src="flutter.js" defer></script>
@@ -44,26 +44,21 @@
     <div id="flutter_target"></div>
     <script>
       window.addEventListener("load", function (ev) {
-        console.log('STEP 1  window.addEventListener("load"', ev);
         // Embed flutter into div#flutter_target
         let target = document.querySelector("#flutter_target");
-        console.log('step 2')
         _flutter.loader.loadEntrypoint({
           onEntrypointLoaded: async function (engineInitializer) {
-            console.log('step 3')
             let appRunner = await engineInitializer.initializeEngine({
               hostElement: target,
-              renderer: "canvas",
+              renderer: "html",
             });
             await appRunner.runApp();
-           
           },
         });
-        console.log('step 4')
       });
 
       window.addEventListener("message", function (event) {
-        console.log('STEP message received', event);
+        console.log('Msg received from Thiago')
         if (event.data && event.data.messageType === "code-payload") {
           window._appState.sendContext(event.data.data);
         }
