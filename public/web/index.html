@@ -58,7 +58,6 @@
       });
 
       window.addEventListener("message", function (event) {
-        console.log('Msg received from Thiago')
         if (event.data && event.data.messageType === "code-payload") {
           window._appState.sendContext(event.data.data);
         }
