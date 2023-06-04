@@ -1,6 +1,6 @@
 {
-    "name": "bufay",
-    "short_name": "bufay",
+    "name": "revue_app",
+    "short_name": "revue_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
