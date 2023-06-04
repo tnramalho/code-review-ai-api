@@ -15,12 +15,6 @@ export class ClaudeApiController {
     return await this.claudeApiService.codeReview(codeAsContext, codeToReview);
   }
 
-  @Post('chat-old')
-  async chat(@Body('content') content: string) {
-    console.log('>>>> chat >>>', content);
-    return await this.claudeApiService.codeReviewChat(content);
-  }
-
   @Post('chat')
   async prompt(@Body() aiSettings: SamplingParameters) {
     //console.log('>>>> proxy >> ', aiSettings);
