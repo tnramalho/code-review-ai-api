@@ -1,6 +1,13 @@
-import { AI_PROMPT, Client, CompletionResponse, HUMAN_PROMPT, SamplingParameters } from '@anthropic-ai/sdk';
-import { Injectable } from '@nestjs/common/decorators/core';
+import {
+  AI_PROMPT,
+  Client,
+  CompletionResponse,
+  HUMAN_PROMPT,
+  SamplingParameters,
+  
+} from '@anthropic-ai/sdk';
 
+import { Injectable } from '@nestjs/common/decorators/core';
 
 @Injectable()
 export class ClaudeApiService {
@@ -72,9 +79,7 @@ export class ClaudeApiService {
       temperature: 0.3,
       model: 'claude-v1.3-100k',
     });
-
-    console.log('response', response.completion);
-
+    console.log('\n\n >>>>  response >>>> ', response);
     return response.completion;
   }
 
