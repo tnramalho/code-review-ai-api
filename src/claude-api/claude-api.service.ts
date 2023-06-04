@@ -70,8 +70,7 @@ export class ClaudeApiService {
     //const context = await this.getContext(codeAsContext, codeToReview);
 
     const prompt = `${HUMAN_PROMPT} ... ${AI_PROMPT}`;
-    console.log(`${prompt}`);
-    console.log(`${content}`);
+    
     const response = await this.client.complete({
       prompt: content,
       stop_sequences: [HUMAN_PROMPT],

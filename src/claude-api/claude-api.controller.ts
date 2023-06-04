@@ -17,7 +17,7 @@ export class ClaudeApiController {
 
   @Post('chat-old')
   async chat(@Body('content') content: string) {
-    console.log('>>>> chat >> ', content);
+    console.log('>>>> chat >>>', content);
     return await this.claudeApiService.codeReviewChat(content);
   }
 
